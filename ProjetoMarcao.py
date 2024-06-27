@@ -144,23 +144,6 @@ def jogar(nome):
             if raio_bolinha <= 30:
                 crescendo = True
         pygame.draw.circle(tela,amarelo,(750,50),raio_bolinha)
-       
-        # Retângulo da persona
-        persona_rect = pygame.Rect(posicaoXPersona, posicaoYPersona, larguraPersona, alturaPersona)
-        
-        # Retângulo do missel
-        missel_rect = pygame.Rect(posicaoXMissel, posicaoYMissel, larguraMissel, alturaMissel)
-        
-        # Retângulo do babydragon
-        babydragon_rect = pygame.Rect(posicaoXbabydragon, posicaoYbabydragon, larguraBabydragon, alturaBabydragon)
-        # Verificar colisão entre persona e missel
-        if persona_rect.colliderect(missel_rect):
-            dead(nome, pontos)
-        
-        # Verificar colisão entre persona e babydragon
-        if persona_rect.colliderect(babydragon_rect):
-            dead(nome, pontos)
-
 
         pygame.display.update()
         relogio.tick(60)
